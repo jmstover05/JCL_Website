@@ -23,6 +23,11 @@ namespace JCL_Website.Controllers
             return View();
         }
 
+        public ViewResult LoginPage()
+        {
+            return View("LoginPage");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
