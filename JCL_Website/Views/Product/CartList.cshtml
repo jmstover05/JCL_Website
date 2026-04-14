@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>My Cart</title>
+    </head>
+    <body>
+        <div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p>uhh there is nothing here yet...</p>
+        <a asp-controller="Home" asp-action="Index">Return HOME</a>
+        </div>
+        <div class="text-center">
+            <p> The contents of your cart will go here:</p>
+            @model IEnumerable<Product>
+            @foreach (var p in Model)
+            {
+                <div>
+                    <h3>@p.name</h3>
+                    @p.description
+                    <h4>@p.price.ToString("c")</h4>
+                </div>
+            }
+        </div>
+    </body>
+</html>
