@@ -28,6 +28,18 @@ namespace JCL_Website.Controllers
             return View("LoginPage");
         }
 
+        [HttpGet]
+        public ViewResult CreateAccountPage()
+        {
+            return View("CreateAccountPage");
+        }
+
+        [HttpPost]
+        public ViewResult CreateAccountPage(CustomerAccount customerAccount)
+        {
+            return View("CreateAccountPage");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
