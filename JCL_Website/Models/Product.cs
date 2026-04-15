@@ -7,6 +7,8 @@
         public string description { get; set; } = string.Empty;
         public float price { get; set; }
         public string category { get; set; } = string.Empty;
+        //the src of the image file
+        public string imageSrc {  get; set; } = string.Empty;
 
     }
 }

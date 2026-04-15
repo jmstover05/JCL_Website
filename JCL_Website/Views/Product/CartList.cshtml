@@ -3,6 +3,7 @@
 *@
 @{
 }
+@model CartRepository
 <!DOCTYPE html>
     <html>
     <head>
@@ -17,15 +18,18 @@
         </div>
         <div class="text-center">
             <p> The contents of your cart will go here:</p>
-            @model IEnumerable<Product>
-            @foreach (var p in Model)
+            @foreach (var p in Model.Products)
             {
                 <div>
                     <h3>@p.name</h3>
                     @p.description
                     <h4>@p.price.ToString("c")</h4>
+                    <button asp-controller="Product" asp-action="removeProductFromCart" asp-route-product="@p">Remove From Cart</button>
                 </div>
             }
+        </div>
+        <div>
+            <p>Amount due: @Model.getCartSum()</p>
         </div>
     </body>
 </html>

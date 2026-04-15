@@ -1,12 +1,17 @@
 using JCL_Website.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<ProductRepository, FakeProductRepository>();
+// allows the website to access the database connection string found in appsettings.json
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddTransient<ProductRepository, EfProductRepository>();
 
 var app = builder.Build();
 
