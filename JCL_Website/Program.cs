@@ -1,7 +1,23 @@
+using JCL_Website.Models;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// allows the website to access the database connection string found in appsettings.json
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddTransient<ProductRepository, EfProductRepository>();
+builder.Services.AddScoped<CartRepository>(sp => SessionCart.GetCart(sp));
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+//creates a new session
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -20,8 +36,18 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// MAP ROUTES HERE
+// The controller name is both the name of a controller file (ex: HomeController)
+// AND the name of a view folder (ex: Views/Home) or else it won't work
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "shoppingCart",
+    pattern: "shoppingCart",
+    defaults: new { controller = "Cart", action = "Index"});
+
+app.UseSession();
 
 app.Run();
