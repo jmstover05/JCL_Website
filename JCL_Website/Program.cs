@@ -12,6 +12,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddTransient<ProductRepository, EfProductRepository>();
+builder.Services.AddScoped<CartRepository>(sp => SessionCart.GetCart(sp));
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+//creates a new session
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -40,6 +46,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "shoppingCart",
     pattern: "shoppingCart",
-    defaults: new { controller = "Product", action = "CartList"});
+    defaults: new { controller = "Cart", action = "Index"});
+
+app.UseSession();
 
 app.Run();

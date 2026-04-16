@@ -2,22 +2,39 @@
 {
     public class CartRepository
     {
-        //list of products that have been put in the user's cart.
-        public List<Product> Products => new List<Product> {
-            new Product { name = "Football", price = 25 },
-            new Product { name = "Surf board", price = 179 },
-            new Product { name = "Running shoes", price = 95 }
-            };
-        public float getCartSum()
+        
+        private List<CartLine> lineCollection = new List<CartLine>();
+        public virtual void AddItem(Product product, int quantity)
         {
-            float sum = 0;
-            foreach(var product in Products)
+            CartLine line = lineCollection
+            .Where(p => p.Product.productID == product.productID)
+            .FirstOrDefault();
+            if (line == null)
             {
-                sum += product.price;
+                lineCollection.Add(new CartLine
+                {
+                    Product = product,
+                    Quantity = quantity
+                });
             }
-            return sum;
+            else
+            {
+                line.Quantity += quantity;
+            }
         }
-
-      
+        public virtual void RemoveLine(Product product) =>
+            lineCollection.RemoveAll(l => l.Product.productID == product.productID);
+        public virtual float ComputeTotalValue() =>
+            lineCollection.Sum(e => e.Product.price * e.Quantity);
+        public virtual void Clear() => lineCollection.Clear();
+        public virtual IEnumerable<CartLine> Lines => lineCollection;
     }
+    public class CartLine
+    {
+        public int CartLineID { get; set; }
+        public Product Product { get; set; }
+        public int Quantity { get; set; }
+    }
+
 }
+
