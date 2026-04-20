@@ -13,6 +13,7 @@ namespace JCL_Website.Controllers
             cart = cartService;
         }
         public ViewResult Checkout() => View(new Order());
+        public ViewResult Find() => View();
 
         [HttpPost]
         public ViewResult Retrieval(int orderID)
