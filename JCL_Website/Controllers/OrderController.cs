@@ -13,6 +13,14 @@ namespace JCL_Website.Controllers
             cart = cartService;
         }
         public ViewResult Checkout() => View(new Order());
+
+        [HttpPost]
+        public ViewResult Retrieval(int orderID)
+        {
+            Order order = repository.Orders.FirstOrDefault(o => o.OrderID == orderID);
+            //check if order is not null pls
+            return View(order);
+        }
         [HttpPost]
         public IActionResult Checkout(Order order)
         {
