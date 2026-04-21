@@ -1,4 +1,5 @@
-﻿using JCL_Website.Models;
+﻿
+using JCL_Website.Models;
 
 namespace JCL_Website.Models.ViewModels
 {

@@ -19,8 +19,16 @@ namespace JCL_Website.Controllers
         public ViewResult Retrieval(int orderID)
         {
             Order order = repository.Orders.FirstOrDefault(o => o.OrderID == orderID);
-            //check if order is not null pls
-            return View(order);
+            if (order == null)
+            {
+                ModelState.AddModelError("", "Sorry! We cannot find an order under that orderID...");
+                return View("Find");
+            }
+            else
+            {
+                return View(order);
+
+            }
         }
         [HttpPost]
         public IActionResult Checkout(Order order)
@@ -35,14 +43,14 @@ namespace JCL_Website.Controllers
                 order.Lines = cart.Lines.ToArray();
                 repository.SaveOrder(order);
                 cart.Clear();
-                return View("Completed");
+                return View("Completed", order.OrderID);
             }
             else
             {
                 return View(order);
             }
         }
-        public ViewResult Completed()
+        public ViewResult Completed(int orderID)
         {
             cart.Clear();
             return View();

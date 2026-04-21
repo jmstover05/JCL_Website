@@ -4,7 +4,7 @@
 @{
 }
 @model Order
-<p>here is the contents of your order: </p>
+<p>Here is the contents of #@Model.OrderID: </p>
 @foreach (var line in Model.Lines)
 {
     <tr>
@@ -15,4 +15,7 @@
             @((line.Quantity * line.Product.price).ToString("c"))
         </td>
     </tr>
+
 }
+    <p>Order is shipped: @Model.Shipped</p>
+
