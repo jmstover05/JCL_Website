@@ -11,7 +11,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// makes database work i think
 builder.Services.AddTransient<ProductRepository, EfProductRepository>();
+builder.Services.AddTransient<OrderRepository, EfOrderRepository>();
+
 builder.Services.AddScoped<CartRepository>(sp => SessionCart.GetCart(sp));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
