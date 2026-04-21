@@ -1,0 +1,33 @@
+﻿@*
+    
+*@
+@{
+}
+
+<link rel="stylesheet" href="~/css/ProductPageStyleSheet.css" asp-append-version="true" />
+
+@model IEnumerable<Product>
+  <h1><u>JCL's Products</u></h1>
+<div class="productGrid">
+@foreach (var p in Model)
+{
+<div class="box">
+<div>
+<h3>@p.name</h3>
+<img src="/JCLImages/@p.imageSrc" alt = "" style="width:300px; height:300px;" />
+<br>
+@p.description
+<h4>@p.price.ToString("c")</h4>
+</div>
+<form id="@p.productID" asp-action="AddToCart"
+asp-controller="Cart" method="post" class="float-start m-2 p-1">
+<input type="hidden" value= "@p.productID" name= "productID"/>
+<input type="hidden" name="returnUrl"
+value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+<button type="submit" class="btn btn-info btn-sm float-start">
+Add To Cart
+</button>
+</form>
+</div>
+}
+</div>

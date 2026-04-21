@@ -24,6 +24,7 @@ namespace JCL_Website.Controllers
                 ReturnUrl = returnUrl
             });
         }
+        [HttpPost]
         public ViewResult Checkout() => View(new Order());
         
         public RedirectToActionResult AddToCart(int productId, string returnUrl)
