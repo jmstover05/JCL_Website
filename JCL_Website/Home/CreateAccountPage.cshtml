@@ -1,0 +1,27 @@
+﻿@model JCL_Website.Models.CustomerAccount
+@{
+    ViewData["Title"] = "Account Creation Page";
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Account Creation Page</title>
+    </head>
+    <body>
+        <div class="text-center">
+            <form asp-action="CreateAccountPage" method="post">
+                <label asp-for="username">Username: </label>
+                <input type="text" name="username"/>
+                <br />
+                <label asp-for="password">Password: </label>
+                <input type="password" name=" = password"/>
+                <br />
+                <label>Create Account: </label>
+                <input type="submit" />
+            </form>
+            <br />
+            <a asp-action="Index">Return HOME</a>
+        </div>
+    </body>
+</html>

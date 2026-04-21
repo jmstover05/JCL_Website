@@ -27,8 +27,16 @@ body {
     flex-wrap: wrap;
 }
 
+.FAQGrid {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1em;
+    row-gap: 1em;
+    flex-wrap: wrap;
+}
+
 .box{
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     text-align: center;
-} 
+}
