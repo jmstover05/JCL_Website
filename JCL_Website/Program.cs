@@ -42,7 +42,7 @@ using (var scope = app.Services.CreateScope())
             price = 59.99f,
             category = "Headphones",
             description = "Audio device for gamers.",
-            imageSrc = "JCL_Headset.png"
+            imageSrc = "Logoless_Headset.png"
         });
 
     }
@@ -54,7 +54,7 @@ using (var scope = app.Services.CreateScope())
             price = 69.99f,
             category = "Headphones",
             description = "Sound device for your ears.",
-            imageSrc = "Logoless_Headphones.png"
+            imageSrc = "JCL_Headset.png"
         });
 
     }
@@ -65,20 +65,32 @@ using (var scope = app.Services.CreateScope())
             name = "JCL Earbuds",
             price = 49.95f,
             category = "Earbuds",
-            description = "Small audio device for easier carry",
+            description = "Small & easy to carry audio device",
             imageSrc = "JCL_Earbuds.png"
         });
 
     }
-    if (!context.Products.Any(p => p.name == "JCL Earbuds"))
+    if (!context.Products.Any(p => p.name == "JCL Speakers"))
     {
         context.Products.Add(new Product
         {
-            name = "JCL Earbuds",
-            price = 49.95f,
-            category = "Earbuds",
+            name = "JCL Speakers",
+            price = 249.99f,
+            category = "Speakers",
             description = "Audio device for gatherings.",
-            imageSrc = "JCL_Earbuds.png"
+            imageSrc = "Logoless_Speakers.png"
+        });
+
+    }
+    if (!context.Products.Any(p => p.name == "JCL Comfy Headphones"))
+    {
+        context.Products.Add(new Product
+        {
+            name = "JCL Comfy Headphones",
+            price = 74.99f,
+            category = "Headphones",
+            description = "Audio Device for travellers.",
+            imageSrc = "Logoless_Headphones.png"
         });
 
     }
