@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
 <div class="text-center">
     <h1 class="display-4"><u> Welcome! </u></h1>
@@ -11,4 +12,14 @@
         You can also put links to any important pages on the home ribbon. You can do that in the _Layout.cshtml file
         found in the Views/Shared folder - Jacob
     </p>
+</div>
+
+<div class="linkGrid">
+    <div class="box">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Background" asp-action="Index">Background</a>
+    </div>
+
+    <div class="box">
+        <a class="nav-link text-dark" asp-area="" asp-controller="FAQ" asp-action="Index">FAQ</a>
+    </div>
 </div>

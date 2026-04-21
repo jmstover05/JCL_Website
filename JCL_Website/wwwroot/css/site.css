@@ -20,3 +20,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.linkGrid {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+} 

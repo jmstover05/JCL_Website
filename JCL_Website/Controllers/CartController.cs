@@ -25,6 +25,8 @@ namespace JCL_Website.Controllers
             });
         }
         [HttpPost]
+        public ViewResult Checkout() => View(new Order());
+        
         public RedirectToActionResult AddToCart(int productId, string returnUrl)
         {
             Product product = repository.Products
