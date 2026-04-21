@@ -13,6 +13,9 @@ namespace JCL_Website.Controllers
         }
 
         // vvv put a function here that brings you to the products page (returns a view) vvv
-        
+        public ViewResult Index()
+        {
+            return View(productRepository.Products);
+        }
     }
 }
