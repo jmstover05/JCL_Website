@@ -4,18 +4,37 @@
 @{
 }
 @model Order
-<p>Here is the contents of #@Model.OrderID: </p>
-@foreach (var line in Model.Lines)
-{
-    <tr>
-        <td class="text-center">@line.Quantity</td>
-        <td class="text-left">@line.Product.name</td>
-        <td class="text-right">@line.Product.price.ToString("c")</td>
-        <td class="text-right">
-            @((line.Quantity * line.Product.price).ToString("c"))
-        </td>
-    </tr>
 
-}
-    <p>Order is shipped: @Model.Shipped</p>
+<html>
+    <body class="specialBodyJ">
+        <div class="contentDivJ-1">
+            <h1 class="headerJ-1">Order Retrieved</h1>
+            <div class="contentDivJ-2">
+                <h3>Here are all the contents of Order #@Model.OrderID: </h3>
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Individual Price</th>
+                        <th>Quantity</th>
+                        <th>Charged</th>
+                    </tr>
+                @foreach (var line in Model.Lines)
+                {
+                    <tr>
+                        <td class="text-left">@line.Product.name</td>
+                        <td class="text-right">@line.Product.price.ToString("c")</td>
+                        <td class="text-center">x @line.Quantity</td>
+                        <td class="text-right">
+                            @((line.Quantity * line.Product.price).ToString("c"))
+                        </td>
+                    </tr>
+                }
+                </table>
+            <h3 style="color: #61b1ac">Order is shipped: @Model.Shipped</h3>
+            </div>
+            <a class="btn btn-primary buttonJ-1" asp-controller="Order" asp-action="Find">Track Another Order</a>
+            <a class="btn btn-primary buttonJ-1" asp-controller="Home" asp-action="Index">Return Home</a>
+        </div>
+    </body>
+</html>
 

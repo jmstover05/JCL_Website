@@ -3,11 +3,21 @@
 *@
 @{
 }
-Track your order:
-Input your orderID:
-<div asp-validation-summary="All" class="text-danger"></div>
-<form asp-action="Retrieval" method="post">
-    OrderID:
-    <input type="text" name="orderID"/>
-    <input type="submit" />
-</form>
+<html>
+<body class="specialBodyJ">
+        <div class="contentDivJ-1">
+            <h1 class="headerJ-1">Track Your Order</h1>
+            <div class="contendDivJ-2" style="padding: 30px 0px 100px 0px">
+                <h3>Input your orderID:</h3>
+                <br />
+                <br />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <form asp-action="Retrieval" method="post">
+                    OrderID:
+                    <input type="text" name="orderID"/>
+                    <input type="submit" class="buttonJ-1"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
