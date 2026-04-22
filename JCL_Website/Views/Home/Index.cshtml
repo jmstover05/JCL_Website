@@ -3,23 +3,21 @@
 }
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<div class="text-center">
+<div class="text-center mb-5">
     <h1 class="display-4"><u> Welcome! </u></h1>
-    <p>This is the JCL Website! Check out our Background and FAQ below or click a Page Tab to get started! </p>
-   
-
-    <p>Not really sure what we should have here on the home page other than like "featured pages" or smthn.
-        You can also put links to any important pages on the home ribbon. You can do that in the _Layout.cshtml file
-        found in the Views/Shared folder - Jacob
-    </p>
+    <p>This is the JCL Website, click products on the banner to start shopping!<br />Want to learn more about us? Learn about our background or look through some of our frequently asked questions!</p>
 </div>
 
 <div class="linkGrid">
-    <div class="box">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Background" asp-action="Index">Background</a>
+    <div class="linkbox">
+        <a style="font-size:24px;" class="nav-link text-light" asp-area="" asp-controller="Background" asp-action="Index">Background</a>
     </div>
 
-    <div class="box">
-        <a class="nav-link text-dark" asp-area="" asp-controller="FAQ" asp-action="Index">FAQ</a>
+    <div class="linkbox">
+        <a style="font-size:24px;" class="nav-link text-light" asp-area="" asp-controller="FAQ" asp-action="Index">FAQ</a>
     </div>
+</div>
+
+<div class="text-center mt-5">
+    <h4>We hope you enjoy shopping with us today.</h4>
 </div>
