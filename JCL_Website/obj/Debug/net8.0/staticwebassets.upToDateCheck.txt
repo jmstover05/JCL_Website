@@ -1,8 +1,10 @@
+wwwroot\css\NavbarBackground.css
 wwwroot\css\ProductPageStyleSheet.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\JCLImages\JCL_Earbuds.png
 wwwroot\JCLImages\JCL_Headset.png
+wwwroot\JCLImages\JCL_Logo.png
 wwwroot\JCLImages\Logoless_Headphones.png
 wwwroot\JCLImages\Logoless_Headset.png
 wwwroot\JCLImages\Logoless_Speakers.png

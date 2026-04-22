@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace JCL_Website.Models
+﻿namespace JCL_Website.Models
 {
     public class EfProductRepository : ProductRepository
     {
@@ -10,7 +8,5 @@ namespace JCL_Website.Models
             context = ctx;
         }
         public IEnumerable<Product> Products => context.Products;
-
-      
     }
 }
