@@ -1,24 +1,24 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .linkGrid {
@@ -27,9 +27,29 @@ body {
     flex-wrap: wrap;
 }
 
-.box{
-    width: 150px;
-    height: 150px;
+.FAQGrid {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1em;
+    row-gap: 1em;
+    flex-wrap: wrap;
+}
+
+.linkbox {
+    border: 5px solid #770016;
+    background-color: #d4243b;
+    color: #ffffff;
+    width: 200px;
+    height: 75px;
+    text-align: center;
+}
+
+.box {
+    border: 5px solid #770016;
+    background-color: #d4243b;
+    color: #ffffff;
+    width: 250px;
+    height: 250px;
     text-align: center;
 } 
 

@@ -22,81 +22,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 
-
 var app = builder.Build();
-
-// Create all of the products for the database here
-using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-    // Apply migrations automatically
-    context.Database.Migrate();
-
-    //only create the product if it doesn't exist yet
-    if (!context.Products.Any(p => p.name == "JCL Headset"))
-    {
-        context.Products.Add(new Product
-        {
-            name = "JCL Headset",
-            price = 59.99f,
-            category = "Headphones",
-            description = "Audio device for gamers.",
-            imageSrc = "Logoless_Headset.png"
-        });
-
-    }
-    if (!context.Products.Any(p => p.name == "JCL Headphones"))
-    {
-        context.Products.Add(new Product
-        {
-            name = "JCL Headphones",
-            price = 69.99f,
-            category = "Headphones",
-            description = "Sound device for your ears.",
-            imageSrc = "JCL_Headset.png"
-        });
-
-    }
-    if (!context.Products.Any(p => p.name == "JCL Earbuds"))
-    {
-        context.Products.Add(new Product
-        {
-            name = "JCL Earbuds",
-            price = 49.95f,
-            category = "Earbuds",
-            description = "Small & easy to carry audio device",
-            imageSrc = "JCL_Earbuds.png"
-        });
-
-    }
-    if (!context.Products.Any(p => p.name == "JCL Speakers"))
-    {
-        context.Products.Add(new Product
-        {
-            name = "JCL Speakers",
-            price = 249.99f,
-            category = "Speakers",
-            description = "Audio device for gatherings.",
-            imageSrc = "Logoless_Speakers.png"
-        });
-
-    }
-    if (!context.Products.Any(p => p.name == "JCL Comfy Headphones"))
-    {
-        context.Products.Add(new Product
-        {
-            name = "JCL Comfy Headphones",
-            price = 74.99f,
-            category = "Headphones",
-            description = "Audio Device for travellers.",
-            imageSrc = "Logoless_Headphones.png"
-        });
-
-    }
-    context.SaveChanges();
-    
-}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -124,8 +50,6 @@ app.MapControllerRoute(
     name: "shoppingCart",
     pattern: "shoppingCart",
     defaults: new { controller = "Cart", action = "Index"});
-
-
 
 app.UseSession();
 
