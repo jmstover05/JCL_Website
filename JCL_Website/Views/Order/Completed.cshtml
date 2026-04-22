@@ -4,11 +4,19 @@
 @{
 }
 @model int
-<div class="row ms-1" style="text-align:center">
-    <h2>Thanks!</h2>
-    <p>Thank you for placing your order.</p>
-    <p>We'll ship your goods as soon as possible.</p>
-    <p>Your order ID is @Model</p>
-    <label>Track the status of your order here:</label>
-    <button asp-controller="Order" asp-action="Find"></button>
-</div>
+<html>
+    <body class="specialBodyJ">
+        <div class="contentDivJ-1">
+            <h1 class="headerJ-1">Order Completed</h1>
+            <div class="contentDivJ-2">
+                <h3>Thank you for placing your order!</h3>
+                <p>We'll ship your goods as soon as possible.</p>
+                <br />
+                <h3 style="color: #61b1ac">Your order ID is: @Model</h3>
+                <br />
+                <label>Track the status of your order here:</label>
+            </div>
+            <a class="btn btn-primary buttonJ-1" asp-controller="Order" asp-action="Find">Track Your Order</a>
+        </div>
+    </body>
+</html>

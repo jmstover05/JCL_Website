@@ -32,3 +32,57 @@ body {
     height: 150px;
     text-align: center;
 } 
+
+/* Jacob's stuff here */
+.specialBodyJ {
+    background-color: #f0f6f6;
+    margin-bottom: 60px;
+}
+/* general div*/
+.contentDivJ-1 {
+    background-color: #ffffff;
+    text-align: center;
+
+    margin: 20px 50px 20px 50px;
+    padding: 0px 0px 50px 0px;
+    border: 2px solid black;
+}
+.contentDivJ-2 {
+    display: flex;
+    background-color: #ffffff;
+
+    text-align: center;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 10px 20px 20px 20px;
+    margin: 20px 50px 20px 50px;
+}
+
+.contentDivJ-3 {
+    display: grid;
+    background-color: #ffffff;
+    text-align:left;
+
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 50px auto;
+    gap: 20px 100px;
+    justify-content:center;
+
+    padding: 10px 20px 20px 20px;
+    margin: 20px 50px 20px 50px;
+}
+
+.headerJ-1 {
+    background-color: #2b2f40;
+    color: #ffffff;
+    padding: 5px 0px 5px 0px;
+}
+
+.buttonJ-1 {
+    background-color: #ff0021;
+    border-color: #770016;
+    color: #ffffff;
+}

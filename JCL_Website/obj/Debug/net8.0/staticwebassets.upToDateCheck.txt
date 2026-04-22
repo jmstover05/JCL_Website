@@ -1,4 +1,4 @@
-wwwroot\css\NavbarBackground.css
+wwwroot\css\JacobStyleSheet.css
 wwwroot\css\ProductPageStyleSheet.css
 wwwroot\css\site.css
 wwwroot\favicon.ico

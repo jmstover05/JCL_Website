@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daycm\\Downloads\\JCL_Website-master\\JCL_Website\\JCL_Website.csproj": {}
+    "C:\\Users\\jmsto\\source\\repos\\JCL_Website\\JCL_Website\\JCL_Website.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daycm\\Downloads\\JCL_Website-master\\JCL_Website\\JCL_Website.csproj": {
+    "C:\\Users\\jmsto\\source\\repos\\JCL_Website\\JCL_Website\\JCL_Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daycm\\Downloads\\JCL_Website-master\\JCL_Website\\JCL_Website.csproj",
+        "projectUniqueName": "C:\\Users\\jmsto\\source\\repos\\JCL_Website\\JCL_Website\\JCL_Website.csproj",
         "projectName": "JCL_Website",
-        "projectPath": "C:\\Users\\daycm\\Downloads\\JCL_Website-master\\JCL_Website\\JCL_Website.csproj",
-        "packagesPath": "C:\\Users\\daycm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daycm\\Downloads\\JCL_Website-master\\JCL_Website\\obj\\",
+        "projectPath": "C:\\Users\\jmsto\\source\\repos\\JCL_Website\\JCL_Website\\JCL_Website.csproj",
+        "packagesPath": "C:\\Users\\jmsto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jmsto\\source\\repos\\JCL_Website\\JCL_Website\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\daycm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jmsto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -30,7 +30,6 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -45,11 +44,10 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
@@ -102,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
