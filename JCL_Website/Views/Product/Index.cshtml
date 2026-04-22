@@ -20,11 +20,11 @@
 <h4>@p.price.ToString("c")</h4>
 </div>
 <form id="@p.productID" asp-action="AddToCart"
-asp-controller="Cart" method="post" class="float-start m-2 p-1">
+asp-controller="Cart" method="post" class="text-center m-2 p-1">
 <input type="hidden" value= "@p.productID" name= "productID"/>
 <input type="hidden" name="returnUrl"
 value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-<button type="submit" class="btn btn-info btn-sm float-start">
+<button type="submit" class="btn btn-info btn-sm ">
 Add To Cart
 </button>
 </form>
